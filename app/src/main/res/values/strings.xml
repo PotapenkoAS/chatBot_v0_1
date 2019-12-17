@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Chat_bot</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="chat_bot_vlsu">Chat-bot VLSU</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">sign up</string>
+    <string name="or">OR</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="select_institute">Select institute</string>
+    <string name="select_department">Select department</string>
+    <string name="next">Next</string>
+    <string name="enter_login">Enter login</string>
+    <string name="login">Login</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="password_validation_info_message">Password has to contain from 6 to 50 symbols</string>
+    <string name="finish">finish</string>
+    <string name="enter_message">Enter message…</string>
+    <string name="send_icon">send icon</string>
+    <string-array name="instituteSpinnerItems">
+        <item>IITR</item>
+        <item>IAMPI</item>
+        <item>TEST1</item>
+        <item>TEST2</item>
+    </string-array>
+    <string-array name="departmentSpinnerItems">
+        <item>ISSE</item>
+        <item>CE</item>
+        <item>IS</item>
+        <item>PI</item>
+        <item>TEST3</item>
+        <item>TEST4</item>
+        <item>TEST5</item>
+    </string-array>
+
+</resources>
