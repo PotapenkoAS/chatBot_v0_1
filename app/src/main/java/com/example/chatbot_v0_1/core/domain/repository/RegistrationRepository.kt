@@ -9,4 +9,5 @@ interface RegistrationRepository: KoinComponent {
 
     fun registration(user: User): Single<UserResponse>
 
+    fun checkLogin(login: String): Single<Boolean>
 }

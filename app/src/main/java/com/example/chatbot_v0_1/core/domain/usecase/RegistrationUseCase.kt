@@ -16,4 +16,10 @@ class RegistrationUseCase : KoinComponent {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
+
+    fun doApiCheckLogin(login: String): Single<Boolean> {
+        return get<RegistrationRepository>().checkLogin(login)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 }
