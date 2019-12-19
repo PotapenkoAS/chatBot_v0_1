@@ -5,6 +5,7 @@ import com.example.chatbot_v0_1.core.NETWORK_BASE_URL
 import com.example.chatbot_v0_1.core.NETWORK_TIMEOUT
 import com.example.chatbot_v0_1.core.data.source.network.api.ChatService
 import com.example.chatbot_v0_1.core.data.source.network.api.LoginService
+import com.example.chatbot_v0_1.core.data.source.network.api.RegistrationService
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,11 +20,16 @@ val retrofit = provideRetrofit()
 val serviceModule = module {
     single { provideLoginService() }
     single { provideChatService() }
+    single { provideRegistrationService() }
 }
 
 
 private fun provideLoginService(): LoginService {
     return retrofit.create(LoginService::class.java)
+}
+
+private fun provideRegistrationService(): RegistrationService {
+    return retrofit.create(RegistrationService::class.java)
 }
 
 private fun provideChatService(): ChatService {
@@ -47,11 +53,9 @@ private fun provideRetrofit(): Retrofit {
         .addInterceptor(loggingInterceptorBody)
         .build()
 
-    val gson = GsonBuilder().setLenient().create()
-
     return Retrofit.Builder()
         .baseUrl(NETWORK_BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create(gson))
+        .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(okHttpClient)
         .build()

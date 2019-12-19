@@ -7,14 +7,35 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.chatbot_v0_1.core.presentation.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationStepOneFragment"
+            app:destination="@+id/registrationStepOne" />
     </fragment>
 
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.chatbot_v0_1.core.presentation.chat.ChatFragment"
         android:label="ChatFragment" />
+
+    <fragment
+        android:id="@+id/registrationStepOne"
+        android:name="com.example.chatbot_v0_1.core.presentation.registration.stepone.RegistrationStepOneFragment"
+        android:label="RegistrationStepOne">
+        <action
+            android:id="@+id/action_registrationStepOneFragment_to_registrationStepTwoFragment"
+            app:destination="@+id/registrationStepTwo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationStepTwo"
+        android:name="com.example.chatbot_v0_1.core.presentation.registration.steptwo.RegistrationStepTwoFragment"
+        android:label="RegistrationStepTwo">
+        <action
+            android:id="@+id/action_registrationStepTwoFragment_to_chatFragment"
+            app:destination="@+id/chatFragment" />
+    </fragment>
 </navigation>

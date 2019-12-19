@@ -14,24 +14,20 @@
     <string name="enter_login">Enter login</string>
     <string name="login">Login</string>
     <string name="confirm_password">Confirm password</string>
-    <string name="password_validation_info_message">Password has to contain from 6 to 50 symbols</string>
+    <string name="password_validation_info_message">Login and password have to contain from 6 to 50 symbols</string>
+    <string name="login_validation_error">Login is too short</string>
+    <string name="password_validation_error">Password is too short</string>
+    <string name="password_confirm_validation_error">Passwords don\'t match</string>
+    <string name="fio_validation_error">Please, fill in first and last name</string>
     <string name="finish">finish</string>
     <string name="enter_message">Enter message…</string>
     <string name="send_icon">send icon</string>
-    <string-array name="instituteSpinnerItems">
-        <item>IITR</item>
-        <item>IAMPI</item>
-        <item>TEST1</item>
-        <item>TEST2</item>
-    </string-array>
-    <string-array name="departmentSpinnerItems">
-        <item>ISSE</item>
-        <item>CE</item>
-        <item>IS</item>
-        <item>PI</item>
-        <item>TEST3</item>
-        <item>TEST4</item>
-        <item>TEST5</item>
-    </string-array>
+    <string name="chat_here">CHAT HERE</string>
+    <string name="vlsu_bot">VLSU Bot</string>
+    <string name="next_step">Next step</string>
+    <string name="patronymic">Patronymic</string>
+    <string name="group">Group</string>
+    <integer name="max_login_length">50</integer>
+    <integer name="max_password_length">50</integer>
 
 </resources>
