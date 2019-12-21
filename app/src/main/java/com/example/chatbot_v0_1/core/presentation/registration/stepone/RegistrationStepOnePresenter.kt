@@ -14,11 +14,16 @@ class RegistrationStepOnePresenter : KoinComponent,
 
     override fun processClick(login: String, pass1: String, pass2: String) {
         ifViewAttached { view ->
-            processor.process(view, login, pass1, pass2)
-            get<RegistrationUseCase>().doApiCheckLogin(login).subscribe(
-                { response: Boolean? ->},
-                { error: Throwable? -> }
-            )
+            if (processor.process(view, login, pass1, pass2)) {
+                get<RegistrationUseCase>().doApiCheckLogin(login).subscribe(
+                    { response: Boolean? ->
+                        if (response != null && response) {
+                            view.navigateToStepTwo()
+                        }
+                    },
+                    { error: Throwable? -> error?.printStackTrace() }
+                )
+            }
         }
     }
 

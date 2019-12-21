@@ -11,5 +11,6 @@ class LoginContract {
 
     interface Presenter : MvpPresenter<View> {
         fun login(login: String, password: String)
+        fun autoLogin(deviceId: String)
     }
 }

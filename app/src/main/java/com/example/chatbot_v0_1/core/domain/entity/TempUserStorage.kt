@@ -10,4 +10,5 @@ object TempUserStorage {
     var groupId: Int? = null
     var instituteId: Int? = null
     var departmentId: Int? = null
+    var deviceId: String? = null
 }

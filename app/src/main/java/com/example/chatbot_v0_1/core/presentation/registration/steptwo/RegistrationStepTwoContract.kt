@@ -15,7 +15,7 @@ class RegistrationStepTwoContract {
             firstName: String,
             lastName: String,
             patronymic: String,
-            group: String
+            groupShortName: String
         )
     }
 }

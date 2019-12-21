@@ -4,5 +4,6 @@ import kotlin.String
 
 data class LoginCredentials(
     val login: String,
-    val password: String
+    val password: String,
+    val deviceId: String
 )

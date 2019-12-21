@@ -1,6 +1,7 @@
 package com.example.chatbot_v0_1.core.presentation.registration.steptwo
 
 import android.util.Log
+import com.example.chatbot_v0_1.core.data.source.network.request.RegistrationRequest
 import com.example.chatbot_v0_1.core.data.source.network.response.UserResponse
 import com.example.chatbot_v0_1.core.domain.entity.TempUserStorage
 import com.example.chatbot_v0_1.core.domain.entity.User
@@ -32,10 +33,14 @@ class RegistrationStepTwoPresenter : KoinComponent,
                     patronymic,
                     groupShortName
                 )
-                get<RegistrationUseCase>().doApiRegistration(user)
+                get<RegistrationUseCase>().doApiRegistration(
+                    registrationRequest = RegistrationRequest(
+                        user,
+                        TempUserStorage.deviceId!!
+                    )
+                )
                     .subscribe(
                         { response: UserResponse? ->
-                            //TODO save returned User to local storage for fast enter
                             if (response == null || response.userId == 0) {
                                 Log.d("MY_LOG", "server returned user with id==${response?.userId}")
                             }

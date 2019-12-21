@@ -7,7 +7,8 @@ import org.koin.core.context.startKoin
 
 
 class App : Application() {
-    private val modulesList = listOf(mvpModule, useCaseModule, appModule, repositoryModule, serviceModule)
+    private val modulesList =
+        listOf(mvpModule, useCaseModule, appModule, repositoryModule, serviceModule)
 
     override fun onCreate() {
         super.onCreate()

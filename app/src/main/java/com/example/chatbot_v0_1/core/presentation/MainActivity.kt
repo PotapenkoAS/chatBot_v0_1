@@ -1,7 +1,7 @@
 package com.example.chatbot_v0_1.core.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.chatbot_v0_1.R
 

@@ -12,21 +12,21 @@ class OnClickProcessor {
         login: String,
         pass1: String,
         pass2: String
-    ) {
+    ): Boolean {
         if (!validator.validateLogin(login)) {
             view.showLoginValidationError()
-            return
+            return false
         }
         if (!validator.validatePassword(pass1)) {
             view.showPasswordValidationError()
-            return
+            return false
         }
         if (!validator.validatePasswordMatch(pass1, pass2)) {
             view.showConfirmPasswordValidationError()
-            return
+            return false
         }
         TempUserStorage.login = login
         TempUserStorage.password = pass1
-        view.navigateToStepTwo()
+        return true
     }
 }

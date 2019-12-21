@@ -1,5 +1,7 @@
 package com.example.chatbot_v0_1.core.domain.usecase
 
+import com.example.chatbot_v0_1.core.data.source.network.request.DeviceIdRequest
+import com.example.chatbot_v0_1.core.data.source.network.response.UserResponse
 import com.example.chatbot_v0_1.core.domain.entity.LoginCredentials
 import com.example.chatbot_v0_1.core.domain.repository.LoginRepository
 import io.reactivex.Single
@@ -15,5 +17,11 @@ class LoginUseCase : KoinComponent {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 
+    }
+
+    fun doApiAutoLogin(deviceId: DeviceIdRequest): Single<UserResponse> {
+        return get<LoginRepository>().autoLogin(deviceId)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
     }
 }

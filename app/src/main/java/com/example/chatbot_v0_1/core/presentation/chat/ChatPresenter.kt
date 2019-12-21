@@ -14,7 +14,7 @@ class ChatPresenter : KoinComponent, MvpBasePresenter<ChatContract.View>(), Chat
             get<ChatUseCase>().sendMessageApi(messageText)
                 .subscribe(
                     { response: PostMessageResponse? ->
-                        processResponse(
+                        processMessageResponse(
                             response,
                             view,
                             messageText
@@ -25,7 +25,8 @@ class ChatPresenter : KoinComponent, MvpBasePresenter<ChatContract.View>(), Chat
         }
     }
 
-    private fun processResponse(
+
+    private fun processMessageResponse(
         response: PostMessageResponse?,
         view: ChatContract.View,
         messageText: String

@@ -1,5 +1,6 @@
 package com.example.chatbot_v0_1.core.domain.usecase
 
+import com.example.chatbot_v0_1.core.data.source.network.request.RegistrationRequest
 import com.example.chatbot_v0_1.core.data.source.network.response.UserResponse
 import com.example.chatbot_v0_1.core.domain.entity.User
 import com.example.chatbot_v0_1.core.domain.repository.RegistrationRepository
@@ -11,8 +12,8 @@ import org.koin.core.get
 
 class RegistrationUseCase : KoinComponent {
 
-    fun doApiRegistration(user: User): Single<UserResponse> {
-        return get<RegistrationRepository>().registration(user)
+    fun doApiRegistration(registrationRequest: RegistrationRequest): Single<UserResponse> {
+        return get<RegistrationRepository>().registration(registrationRequest)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
