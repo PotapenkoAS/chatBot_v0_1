@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.chatbot_v0_1.R
 import com.example.chatbot_v0_1.core.domain.entity.Message
@@ -42,6 +43,7 @@ class ChatFragment : KoinComponent, MvpFragment<ChatContract.View, ChatContract.
         }
         chat_recycler_view.layoutManager = LinearLayoutManager(context)
         sendButton.apply { setOnClickListener { presenter.sendMessage(editMessage.text.toString()) } }
+        return_button.setOnClickListener {navigateToFeed()}
         //  messageAdapter.addItems(createMockMessages())
     }
 
@@ -57,6 +59,10 @@ class ChatFragment : KoinComponent, MvpFragment<ChatContract.View, ChatContract.
 
     override fun clearText() {
         editMessage.setText("")
+    }
+
+    override fun navigateToFeed() {
+        findNavController().navigate(R.id.feedFragment)
     }
 
     /* private fun createMockMessages(): List<Message> {

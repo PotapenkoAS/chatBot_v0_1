@@ -6,6 +6,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpView
 class NavigationBarContract {
     interface View : MvpView {
         fun navigateToFeed()
+        fun navigateToChat()
     }
 
     interface Presenter : MvpPresenter<View> {

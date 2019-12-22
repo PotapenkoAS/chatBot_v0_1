@@ -8,6 +8,7 @@ class ChatContract {
     interface View : MvpView {
         fun showMyNewMessage(messageText: String)
         fun showBotNewMessage(messageText: String)
+        fun navigateToFeed()
         fun clearText()
     }
 

@@ -5,6 +5,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpView
 
 class RegistrationStepTwoContract {
     interface View : MvpView {
+        fun navigateToFeed()
         fun navigateToChat()
         fun showError()
         fun hideError()

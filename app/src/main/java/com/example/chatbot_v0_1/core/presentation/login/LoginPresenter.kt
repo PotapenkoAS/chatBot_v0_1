@@ -58,7 +58,7 @@ class LoginPresenter : KoinComponent,
             TempUserStorage.groupId = response.groupId
             TempUserStorage.departmentId = response.departmentId
             TempUserStorage.instituteId = response.instituteId
-            view.navigateToChat()
+            view.navigateToFeed()
         }
     }
 }

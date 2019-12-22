@@ -30,6 +30,7 @@
     <string name="to_chat">to chat</string>
     <string name="to_feed">to feed</string>
     <string name="feed_image">feed image</string>
+    <string name="return_button">return button</string>
     <integer name="max_login_length">50</integer>
     <integer name="max_password_length">50</integer>
 

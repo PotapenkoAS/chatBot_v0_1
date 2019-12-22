@@ -51,7 +51,7 @@ class RegistrationStepTwoPresenter : KoinComponent,
                             TempUserStorage.departmentId = response?.departmentId
                             TempUserStorage.instituteId = response?.instituteId
                             TempUserStorage.id = response?.userId
-                            view.navigateToChat()
+                            view.navigateToFeed()
 
                         },
                         { error: Throwable? -> error?.printStackTrace() })

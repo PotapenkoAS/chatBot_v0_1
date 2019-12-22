@@ -44,6 +44,10 @@ class RegistrationStepTwoFragment : KoinComponent,
         lastName.addTextChangedListener { hideError() }
     }
 
+    override fun navigateToFeed() {
+        findNavController().navigate(R.id.feedFragment)
+    }
+
     override fun navigateToChat() {
         findNavController().navigate(R.id.chatFragment)
     }
