@@ -1,16 +1,21 @@
 package com.example.chatbot_v0_1.core.presentation.feed.adapter
 
+import android.content.Intent
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatbot_v0_1.R
 import com.example.chatbot_v0_1.core.DATE_TIME_FEED_FORMAT
 import com.example.chatbot_v0_1.core.domain.entity.FeedItem
+import com.example.chatbot_v0_1.di.globalContext
+import kotlinx.android.synthetic.main.feed_item.*
 import kotlin.collections.ArrayList
 
 class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
@@ -24,6 +29,7 @@ class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
         private val itemText: TextView? = itemView.findViewById(R.id.feed_item_text)
         private val itemImage: ImageView? = itemView.findViewById(R.id.feed_item_image)
         private val itemTime: TextView? = itemView.findViewById(R.id.feed_item_time)
+        private val itemUrl: ImageButton? = itemView.findViewById(R.id.go_web_button)
 
 
         fun bind(item: FeedItem) {
@@ -40,8 +46,16 @@ class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
                 )
             }
             itemTime?.text = String.format(item.dateTime.toString(), DATE_TIME_FEED_FORMAT)
+            itemUrl?.setOnClickListener { goToWeb(item.url) }
+        }
+
+        private fun goToWeb(url: String) {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            browserIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            globalContext.startActivity(browserIntent)
         }
     }
+
 
     fun addItems(items: ArrayList<FeedItem>) {
         feedList.addAll(items)

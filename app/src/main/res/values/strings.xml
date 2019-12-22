@@ -31,6 +31,7 @@
     <string name="to_feed">to feed</string>
     <string name="feed_image">feed image</string>
     <string name="return_button">return button</string>
+    <string name="go_to_web_site">go to web site</string>
     <integer name="max_login_length">50</integer>
     <integer name="max_password_length">50</integer>
 

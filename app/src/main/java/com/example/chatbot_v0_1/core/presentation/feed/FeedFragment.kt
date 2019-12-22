@@ -10,6 +10,7 @@ import com.example.chatbot_v0_1.core.domain.entity.FeedItem
 import com.example.chatbot_v0_1.core.presentation.feed.adapter.FeedAdapter
 import com.hannesdorfmann.mosby3.mvp.MvpFragment
 import kotlinx.android.synthetic.main.feed_fragment.*
+import kotlinx.android.synthetic.main.feed_item.*
 import org.koin.core.KoinComponent
 import org.koin.core.get
 
@@ -45,6 +46,7 @@ class FeedFragment : KoinComponent,
         feed_recycler_view.adapter = feedItemAdapter
         feed_recycler_view.layoutManager = LinearLayoutManager(context)
         presenter.loadFeed()
+
     }
 
     override fun showNews(items: ArrayList<FeedItem>) {

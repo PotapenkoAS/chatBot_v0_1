@@ -7,5 +7,6 @@ data class FeedItem(
     val title: String,
     val text: String,
     val dateTime: Timestamp,
-    val image: String?
+    val image: String?,
+    val url: String
 )
