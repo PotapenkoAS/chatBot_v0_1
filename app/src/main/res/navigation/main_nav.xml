@@ -16,13 +16,22 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationStepOneFragment"
             app:destination="@+id/registrationStepOne" />
+        <action
+            android:id="@+id/action_loginFragment_to_feedFragment"
+            app:destination="@+id/feedFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.chatbot_v0_1.core.presentation.feed.FeedFragment"
+        android:label="FeedFragment"
+        tools:layout="@layout/feed_fragment" />
 
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.chatbot_v0_1.core.presentation.chat.ChatFragment"
         android:label="ChatFragment"
-        tools:layout="@layout/chat_fragment"/>
+        tools:layout="@layout/chat_fragment" />
 
     <fragment
         android:id="@+id/registrationStepOne"

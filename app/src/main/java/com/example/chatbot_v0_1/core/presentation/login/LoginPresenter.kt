@@ -40,7 +40,7 @@ class LoginPresenter : KoinComponent,
     private fun processLoginResponse(response: Boolean?, view: LoginContract.View) {
         if (response != null && response) {
             println("successful login, server returned $response")
-            view.navigateToChat()
+            view.navigateToFeed()
 
         } else {
             println("login failed, server returned $response")

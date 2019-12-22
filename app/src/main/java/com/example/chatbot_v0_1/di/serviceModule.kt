@@ -4,6 +4,7 @@ import com.example.chatbot_v0_1.BuildConfig
 import com.example.chatbot_v0_1.core.NETWORK_BASE_URL
 import com.example.chatbot_v0_1.core.NETWORK_TIMEOUT
 import com.example.chatbot_v0_1.core.data.source.network.api.ChatService
+import com.example.chatbot_v0_1.core.data.source.network.api.FeedService
 import com.example.chatbot_v0_1.core.data.source.network.api.LoginService
 import com.example.chatbot_v0_1.core.data.source.network.api.RegistrationService
 import com.google.gson.GsonBuilder
@@ -21,8 +22,13 @@ val serviceModule = module {
     single { provideLoginService() }
     single { provideChatService() }
     single { provideRegistrationService() }
+    single { provideFeedService() }
 }
 
+
+private fun provideFeedService(): FeedService {
+    return retrofit.create(FeedService::class.java)
+}
 
 private fun provideLoginService(): LoginService {
     return retrofit.create(LoginService::class.java)

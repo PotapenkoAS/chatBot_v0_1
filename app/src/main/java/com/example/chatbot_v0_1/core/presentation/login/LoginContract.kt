@@ -5,6 +5,7 @@ import com.hannesdorfmann.mosby3.mvp.MvpView
 
 class LoginContract {
     interface View : MvpView {
+        fun navigateToFeed()
         fun navigateToChat()
         fun navigateToRegistration()
     }

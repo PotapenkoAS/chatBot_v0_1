@@ -1,6 +1,5 @@
 package com.example.chatbot_v0_1.core.presentation.login
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
@@ -9,12 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.chatbot_v0_1.R
 import com.example.chatbot_v0_1.core.domain.entity.TempUserStorage
-import com.example.chatbot_v0_1.di.globalContext
 import com.hannesdorfmann.mosby3.mvp.MvpFragment
 import kotlinx.android.synthetic.main.login_fragment.*
 import org.koin.core.KoinComponent
 import org.koin.core.get
-import java.security.Security
 
 
 class LoginFragment : KoinComponent,
@@ -48,6 +45,10 @@ class LoginFragment : KoinComponent,
         )
         presenter.autoLogin(TempUserStorage.deviceId!!)
 
+    }
+
+    override fun navigateToFeed() {
+        findNavController().navigate(R.id.feedFragment)
     }
 
     override fun navigateToChat() {
