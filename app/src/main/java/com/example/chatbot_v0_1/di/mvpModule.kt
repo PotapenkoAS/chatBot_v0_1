@@ -8,6 +8,8 @@ import com.example.chatbot_v0_1.core.presentation.login.LoginContract
 import com.example.chatbot_v0_1.core.presentation.login.LoginPresenter
 import com.example.chatbot_v0_1.core.presentation.navigation_bar.NavigationBarContract
 import com.example.chatbot_v0_1.core.presentation.navigation_bar.NavigationBarPresenter
+import com.example.chatbot_v0_1.core.presentation.person.PersonContract
+import com.example.chatbot_v0_1.core.presentation.person.PersonPresenter
 import com.example.chatbot_v0_1.core.presentation.registration.stepone.RegistrationStepOnePresenter
 import com.example.chatbot_v0_1.core.presentation.registration.stepone.RegistrationStepOneContract
 import com.example.chatbot_v0_1.core.presentation.registration.steptwo.RegistrationStepTwoContract
@@ -21,4 +23,5 @@ val mvpModule = module {
     factory<RegistrationStepTwoContract.Presenter> { RegistrationStepTwoPresenter() }
     factory<NavigationBarContract.Presenter> { NavigationBarPresenter() }
     factory<FeedContract.Presenter> { FeedPresenter() }
+    factory<PersonContract.Presenter> { PersonPresenter() }
 }

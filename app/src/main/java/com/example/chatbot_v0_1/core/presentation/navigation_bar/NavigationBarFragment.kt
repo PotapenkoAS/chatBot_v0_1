@@ -33,6 +33,7 @@ class NavigationBarFragment : KoinComponent,
     private fun init() {
         nav_to_feed_button.setOnClickListener { if (findNavController().currentDestination?.id != R.id.feedFragment) navigateToFeed() }
         nav_to_chat_button.setOnClickListener { navigateToChat() }
+        nav_to_person_button.setOnClickListener { navigateToPerson() }
     }
 
     override fun navigateToFeed() {
@@ -41,5 +42,9 @@ class NavigationBarFragment : KoinComponent,
 
     override fun navigateToChat() {
         findNavController().navigate(R.id.chatFragment)
+    }
+
+    override fun navigateToPerson() {
+        findNavController().navigate(R.id.personFragment)
     }
 }

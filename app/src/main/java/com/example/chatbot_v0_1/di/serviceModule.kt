@@ -3,10 +3,7 @@ package com.example.chatbot_v0_1.di
 import com.example.chatbot_v0_1.BuildConfig
 import com.example.chatbot_v0_1.core.NETWORK_BASE_URL
 import com.example.chatbot_v0_1.core.NETWORK_TIMEOUT
-import com.example.chatbot_v0_1.core.data.source.network.api.ChatService
-import com.example.chatbot_v0_1.core.data.source.network.api.FeedService
-import com.example.chatbot_v0_1.core.data.source.network.api.LoginService
-import com.example.chatbot_v0_1.core.data.source.network.api.RegistrationService
+import com.example.chatbot_v0_1.core.data.source.network.api.*
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,8 +20,12 @@ val serviceModule = module {
     single { provideChatService() }
     single { provideRegistrationService() }
     single { provideFeedService() }
+    single { provideCatalogService() }
 }
 
+private fun provideCatalogService(): CatalogService {
+    return retrofit.create(CatalogService::class.java)
+}
 
 private fun provideFeedService(): FeedService {
     return retrofit.create(FeedService::class.java)

@@ -11,14 +11,23 @@
         android:label="LoginFragment"
         tools:layout="@layout/login_fragment">
         <action
-            android:id="@+id/action_loginFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_registrationStepOneFragment"
             app:destination="@+id/registrationStepOne" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navBarFragment"
+        android:name="com.example.chatbot_v0_1.core.presentation.navigation_bar.NavigationBarFragment"
+        android:label="navBarFragment">
         <action
-            android:id="@+id/action_loginFragment_to_feedFragment"
+            android:id="@+id/action_navBar_to_chatFragment"
+            app:destination="@+id/chatFragment" />
+        <action
+            android:id="@+id/action_navBar_to_feedFragment"
             app:destination="@+id/feedFragment" />
+        <action
+            android:id="@+id/action_navBar_to_personFragment"
+            app:destination="@+id/personFragment" />
     </fragment>
 
     <fragment
@@ -49,7 +58,13 @@
         android:label="RegistrationStepTwo"
         tools:layout="@layout/registration_fragment_step_two">
         <action
-            android:id="@+id/action_registrationStepTwoFragment_to_chatFragment"
-            app:destination="@+id/chatFragment" />
+            android:id="@+id/action_registrationStepTwoFragment_to_feedFragment"
+            app:destination="@+id/feedFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/personFragment"
+        android:name="com.example.chatbot_v0_1.core.presentation.person.PersonFragment"
+        android:label="personFragment"
+        tools:layout="@layout/person_fragment" />
 </navigation>

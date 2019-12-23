@@ -7,6 +7,7 @@ class NavigationBarContract {
     interface View : MvpView {
         fun navigateToFeed()
         fun navigateToChat()
+        fun navigateToPerson()
     }
 
     interface Presenter : MvpPresenter<View> {

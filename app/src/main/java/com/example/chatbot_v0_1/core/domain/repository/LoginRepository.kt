@@ -8,7 +8,7 @@ import org.koin.core.KoinComponent
 
 interface LoginRepository : KoinComponent {
 
-    fun login(loginCredentials: LoginCredentials): Single<Boolean>
+    fun login(loginCredentials: LoginCredentials): Single<UserResponse>
 
     fun autoLogin(deviceId: DeviceIdRequest): Single<UserResponse>
 }

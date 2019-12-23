@@ -20,7 +20,7 @@ class LoginPresenter : KoinComponent,
         ifViewAttached { view: LoginContract.View ->
             loginUseCase.doApiLogin(LoginCredentials(login, password, TempUserStorage.deviceId!!))
                 .subscribe(
-                    { response: Boolean? -> processLoginResponse(response, view) },
+                    { response: UserResponse? -> processLoginResponse(response, view) },
                     { error: Throwable? -> error?.printStackTrace() }
                 )
 
@@ -37,9 +37,10 @@ class LoginPresenter : KoinComponent,
         }
     }
 
-    private fun processLoginResponse(response: Boolean?, view: LoginContract.View) {
-        if (response != null && response) {
+    private fun processLoginResponse(response: UserResponse?, view: LoginContract.View) {
+        if (response != null) {
             println("successful login, server returned $response")
+            mapResponseToTempStorage(response)
             view.navigateToFeed()
 
         } else {
@@ -49,16 +50,20 @@ class LoginPresenter : KoinComponent,
 
     private fun processAutoLoginResponse(response: UserResponse?, view: LoginContract.View) {
         if (response != null) {
-            TempUserStorage.id = response.userId
-            TempUserStorage.login = response.login
-            TempUserStorage.password = response.login
-            TempUserStorage.firstName = response.firstName
-            TempUserStorage.lastName = response.lastName
-            TempUserStorage.patronymic = response.patronymic
-            TempUserStorage.groupId = response.groupId
-            TempUserStorage.departmentId = response.departmentId
-            TempUserStorage.instituteId = response.instituteId
+            mapResponseToTempStorage(response)
             view.navigateToFeed()
         }
+    }
+
+    private fun mapResponseToTempStorage(response: UserResponse) {
+        TempUserStorage.id = response.userId
+        TempUserStorage.login = response.login
+        TempUserStorage.password = response.login
+        TempUserStorage.firstName = response.firstName
+        TempUserStorage.lastName = response.lastName
+        TempUserStorage.patronymic = response.patronymic
+        TempUserStorage.groupId = response.groupId
+        TempUserStorage.departmentId = response.departmentId
+        TempUserStorage.instituteId = response.instituteId
     }
 }

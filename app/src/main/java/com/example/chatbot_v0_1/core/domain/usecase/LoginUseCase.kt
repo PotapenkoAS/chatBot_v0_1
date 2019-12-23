@@ -12,7 +12,7 @@ import org.koin.core.get
 
 class LoginUseCase : KoinComponent {
 
-    fun doApiLogin(loginCredentials: LoginCredentials): Single<Boolean> {
+    fun doApiLogin(loginCredentials: LoginCredentials): Single<UserResponse> {
         return get<LoginRepository>().login(loginCredentials)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

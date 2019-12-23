@@ -32,6 +32,12 @@
     <string name="feed_image">feed image</string>
     <string name="return_button">return button</string>
     <string name="go_to_web_site">go to web site</string>
+    <string name="to_person">to person</string>
+    <string name="sign_out">Sign out</string>
+    <string name="avatar">avatar</string>
+    <string name="name">Name</string>
+    <string name="institute">Institute</string>
+    <string name="department">Department</string>
     <integer name="max_login_length">50</integer>
     <integer name="max_password_length">50</integer>
 
