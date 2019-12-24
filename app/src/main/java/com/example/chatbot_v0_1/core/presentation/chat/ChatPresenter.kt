@@ -11,6 +11,8 @@ class ChatPresenter : KoinComponent, MvpBasePresenter<ChatContract.View>(), Chat
 
     override fun sendMessage(messageText: String) {
         ifViewAttached { view ->
+            view.clearText()
+            view.showMyNewMessage(messageText)
             get<ChatUseCase>().sendMessageApi(messageText)
                 .subscribe(
                     { response: PostMessageResponse? ->
@@ -33,8 +35,6 @@ class ChatPresenter : KoinComponent, MvpBasePresenter<ChatContract.View>(), Chat
     ) {
         Log.d("SHIT", response.toString())
         if (response != null) {
-            view.clearText()
-            view.showMyNewMessage(messageText)
             view.showBotNewMessage(response.message)
         }
     }

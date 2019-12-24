@@ -1,7 +1,7 @@
 package com.example.chatbot_v0_1.core.presentation.registration.stepone.processor
 
 import com.example.chatbot_v0_1.core.LOGIN_MIN_LENGTH
-import com.example.chatbot_v0_1.core.PASSWORD_MIN_LENGHT
+import com.example.chatbot_v0_1.core.PASSWORD_MIN_LENGTH
 
 class StepOneValidator {
 
@@ -14,6 +14,6 @@ class StepOneValidator {
     }
 
     fun validatePassword(password: String): Boolean {
-        return password.length >= PASSWORD_MIN_LENGHT
+        return password.length >= PASSWORD_MIN_LENGTH
     }
 }

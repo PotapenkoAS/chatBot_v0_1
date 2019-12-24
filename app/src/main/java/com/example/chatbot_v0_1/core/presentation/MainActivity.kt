@@ -6,10 +6,11 @@ import androidx.navigation.findNavController
 import com.example.chatbot_v0_1.R
 
 class MainActivity : AppCompatActivity() {
+    private val navController by lazy { findNavController(R.id.nav_host_fragment) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findNavController(R.id.nav_host_fragment).navigate(R.id.loginFragment)
+        navController.navigate(R.id.loginFragment)
     }
 }

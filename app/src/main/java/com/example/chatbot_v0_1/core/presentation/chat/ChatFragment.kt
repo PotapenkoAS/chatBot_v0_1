@@ -43,7 +43,9 @@ class ChatFragment : KoinComponent, MvpFragment<ChatContract.View, ChatContract.
         }
         chat_recycler_view.layoutManager = LinearLayoutManager(context)
         sendButton.apply { setOnClickListener { presenter.sendMessage(editMessage.text.toString()) } }
-        return_button.setOnClickListener {navigateToFeed()}
+        return_button.setOnClickListener { navigateToFeed() }
+        presenter.sendMessage("Hi")
+
         //  messageAdapter.addItems(createMockMessages())
     }
 
