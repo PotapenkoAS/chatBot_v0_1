@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.SimpleAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatbot_v0_1.R
@@ -16,6 +17,8 @@ import com.example.chatbot_v0_1.core.DATE_TIME_FEED_FORMAT
 import com.example.chatbot_v0_1.core.domain.entity.FeedItem
 import com.example.chatbot_v0_1.di.globalContext
 import kotlinx.android.synthetic.main.feed_item.*
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.collections.ArrayList
 
 class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
@@ -45,7 +48,8 @@ class FeedAdapter : RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
                     )
                 )
             }
-            itemTime?.text = String.format(item.dateTime.toString(), DATE_TIME_FEED_FORMAT)
+            itemTime?.text =
+                SimpleDateFormat(DATE_TIME_FEED_FORMAT, Locale.US).format(Date(item.dateTime.time))
             itemUrl?.setOnClickListener { goToWeb(item.url) }
         }
 
