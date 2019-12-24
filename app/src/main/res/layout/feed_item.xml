@@ -62,11 +62,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:src="@android:drawable/ic_menu_set_as"
+        android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/feed_item_image"
-        tools:src="@android:drawable/ic_menu_set_as"
-         />
+        app:srcCompat="@drawable/ic_launch_black_28dp" />
 
     <View
         android:layout_width="match_parent"
