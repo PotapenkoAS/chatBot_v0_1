@@ -10,7 +10,7 @@ import retrofit2.http.POST
 interface LoginService {
 
     @POST("/rest/login")
-    fun login(@Body loginCredentials: LoginCredentials): Single<UserResponse>
+    fun login(@Body loginCredentials:  LoginCredentials): Single<UserResponse>
 
     @POST("/rest/auto_login")
     fun autoLogin(@Body deviceId: DeviceIdRequest): Single<UserResponse>
