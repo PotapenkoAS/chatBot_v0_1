@@ -23,6 +23,7 @@ class PersonPresenter : KoinComponent,
             )
             catalogUseCase.doGetCommonInfo(request).subscribe(
                 { response: CatalogIdResponse? ->
+                    view.setName("${TempUserStorage.lastName} ${TempUserStorage.firstName} ${TempUserStorage.patronymic}")
                     view.setGroupText("${response?.group?.fullName}")
                     view.setDepartmentText("${response?.department?.fullName}")
                     view.setInstituteText("${response?.institute?.fullName}")

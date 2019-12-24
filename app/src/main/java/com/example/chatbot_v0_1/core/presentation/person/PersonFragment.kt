@@ -41,6 +41,11 @@ class PersonFragment : KoinComponent,
         findNavController().navigate(R.id.loginFragment)
     }
 
+
+    override fun setName(text: String) {
+        fio.text = text
+    }
+
     override fun setGroupText(text: String) {
         group_text.text = text
     }
@@ -52,6 +57,5 @@ class PersonFragment : KoinComponent,
     override fun setInstituteText(text: String) {
         institute_text.text = text
     }
-
 
 }

@@ -9,6 +9,7 @@ class PersonContract {
         fun setGroupText(text: String)
         fun setDepartmentText(text: String)
         fun setInstituteText(text: String)
+        fun setName(text: String)
 
     }
 
