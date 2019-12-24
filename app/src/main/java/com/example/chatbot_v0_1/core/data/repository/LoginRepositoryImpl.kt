@@ -15,4 +15,7 @@ class LoginRepositoryImpl : LoginRepository {
     override fun autoLogin(deviceId: DeviceIdRequest): Single<UserResponse> =
         get<LoginService>().autoLogin(deviceId)
 
+    override fun signOut(deviceId: DeviceIdRequest): Single<Boolean> =
+        get<LoginService>().singOut(deviceId)
+
 }

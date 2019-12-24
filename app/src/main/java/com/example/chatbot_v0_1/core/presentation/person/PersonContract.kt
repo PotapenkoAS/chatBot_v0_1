@@ -15,5 +15,6 @@ class PersonContract {
 
     interface Presenter : MvpPresenter<View> {
         fun getCommonInfo()
+        fun signOut()
     }
 }

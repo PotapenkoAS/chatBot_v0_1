@@ -15,7 +15,6 @@ class PersonFragment : KoinComponent,
     MvpFragment<PersonContract.View, PersonContract.Presenter>(),
     PersonContract.View {
 
-
     override fun createPresenter(): PersonContract.Presenter = get()
 
     override fun onCreateView(
@@ -26,7 +25,6 @@ class PersonFragment : KoinComponent,
         return inflater.inflate(R.layout.person_fragment, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
@@ -34,13 +32,12 @@ class PersonFragment : KoinComponent,
 
     private fun init() {
         presenter.getCommonInfo()
-        sign_out_button.setOnClickListener { navigateToLogin() }
+        sign_out_button.setOnClickListener { presenter.signOut() }
     }
 
     override fun navigateToLogin() {
         findNavController().navigate(R.id.loginFragment)
     }
-
 
     override fun setName(text: String) {
         fio.text = text

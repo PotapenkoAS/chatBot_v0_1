@@ -11,4 +11,6 @@ interface LoginRepository : KoinComponent {
     fun login(loginCredentials: LoginCredentials): Single<UserResponse>
 
     fun autoLogin(deviceId: DeviceIdRequest): Single<UserResponse>
+
+    fun signOut(deviceId: DeviceIdRequest): Single<Boolean>
 }

@@ -24,4 +24,10 @@ class LoginUseCase : KoinComponent {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
+
+    fun doApiSignOut(deviceId: DeviceIdRequest): Single<Boolean> {
+        return get<LoginRepository>().signOut(deviceId)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+    }
 }

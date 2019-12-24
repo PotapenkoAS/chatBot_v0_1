@@ -14,4 +14,7 @@ interface LoginService {
 
     @POST("/rest/auto_login")
     fun autoLogin(@Body deviceId: DeviceIdRequest): Single<UserResponse>
+
+    @POST("/rest/sign_out")
+    fun singOut(@Body deviceId: DeviceIdRequest): Single<Boolean>
 }
