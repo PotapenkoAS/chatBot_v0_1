@@ -1,6 +1,5 @@
 package com.example.chatbot_v0_1.core.presentation.chat
 
-import android.util.Log
 import com.example.chatbot_v0_1.core.data.source.network.response.PostMessageResponse
 import com.example.chatbot_v0_1.core.domain.usecase.ChatUseCase
 import com.hannesdorfmann.mosby3.mvp.MvpBasePresenter
@@ -33,7 +32,6 @@ class ChatPresenter : KoinComponent, MvpBasePresenter<ChatContract.View>(), Chat
         view: ChatContract.View,
         messageText: String
     ) {
-        Log.d("SHIT", response.toString())
         if (response != null) {
             view.showBotNewMessage(response.message)
         }

@@ -25,7 +25,6 @@ class ChatFragment : KoinComponent, MvpFragment<ChatContract.View, ChatContract.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         messageAdapter = MessageAdapter()
-
     }
 
     override fun onCreateView(
@@ -44,7 +43,7 @@ class ChatFragment : KoinComponent, MvpFragment<ChatContract.View, ChatContract.
         chat_recycler_view.layoutManager = LinearLayoutManager(context)
         sendButton.apply { setOnClickListener { presenter.sendMessage(editMessage.text.toString()) } }
         return_button.setOnClickListener { navigateToFeed() }
-        presenter.sendMessage("Hi")
+        presenter.sendMessage("Hello")
 
         //  messageAdapter.addItems(createMockMessages())
     }
